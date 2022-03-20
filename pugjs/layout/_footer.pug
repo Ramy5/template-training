@@ -1,0 +1,34 @@
+//- start footer
+footer(class="pt-5 pb-5")
+    div(class="container")
+        div(class="row text-white-50 justify-content-between")
+            div(class="info col-md-6 col-lg-4")
+                div(class="image")
+                    img(class="img-fluid mb-4" src="images/logo/logo.png" alt="logo")
+                p Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.
+                p(class="mb-0 mt-4") Created By 
+                    span(class="text-info") Graphberry
+                p(class="mb-1") &copy; 2022 - 
+                    span(class="text-warning") Bondi Inc
+                p(class="text-warning fw-bold mb-0") &reg; Ramy Sabry
+            div(class="linksF col-md-6 mt-4 mt-lg-0 col-lg-2")
+                h5(class="text-white") Links
+                ul(class="list-unstyled")
+                    each val in ["Home", "Our Services", "Portfolio", "Testimonials", "Support", "Terms and Condition"]
+                        li(class="pt-1 pb-1"): a(class="text-decoration-none text-white-50" href="#")= val
+            div(class="aboutF col-md-6 mt-4 mt-lg-0 col-lg-2")
+                h5(class="text-white") About Us
+                ul(class="list-unstyled")
+                    each val in ["Sign In", "Register", "About Us", "Blog", "Contact Us"]
+                        li(class="pt-1 pb-1"): a(class="text-decoration-none text-white-50" href="#")= val
+            div(class="contactF col-md-6 mt-4 mt-lg-0 col-lg-4")
+                h5(class="text-white") Cotact Us
+                p Get in touch with us via mail phone.We are waiting for your call or message.
+                button(class="main-btn bg-danger w-100 rounded-pill btn mt-4 mb-4")
+                    a(class="text-decoration-none text-warning" href="mailto:ramyjounior464@gmail.com?subject=From website") ramyjounior464@gmail.com
+                div(class="icon p-1 text-white text-center text-sm-start")
+                    i(class="fa-brands fa-facebook fs-5 me-3 p-2 rounded-pill")
+                    i(class="fa-brands fa-twitter fs-5 me-3 p-2 rounded-pill")
+                    i(class="fa-brands fa-linkedin fs-5 me-3 p-2 rounded-pill")
+                    i(class="fa-brands fa-youtube fs-5 me-3 p-2 rounded-pill")
+//- end footer

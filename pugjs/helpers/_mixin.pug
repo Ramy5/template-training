@@ -1,0 +1,11 @@
+//- button component
+mixin button(content)
+    button(class="main-btn text-uppercase bg-danger text-warning btn rounded-pill")= content
+
+
+//- start main-head component
+mixin head(h, p)
+    div(class="position-relative main-head text-center m-auto mt-2 mb-2 p-4")
+        img(class="mb-3" src="images/main-head/title.png" alt="title")
+        h2= h
+        p(class="text-black-50 text-uppercase")= p

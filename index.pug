@@ -1,0 +1,139 @@
+include pugjs/helpers/_mixin.pug
+include pugjs/helpers/variable.pug
+doctype
+html(lang="en" dir="ltr")
+    head
+        meta(charset="UTF-8")
+        meta(name="description" content="Template")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Bondi Template
+        include pugjs/helpers/_styles.pug
+    body
+        include pugjs/layout/_header.pug
+        //- start landing
+        div(class="landing d-flex justify-content-center align-items-center" id="home")
+            div(class="text-center text-light")
+                h1(class="mb-2") Taste the Creativity
+                p(class="mb-4 text-white-50") We make awesome graphic and web design
+                +button("Get Started")
+        //- start scroll to top
+        button(class="toTop border-0 pt-2 pb-2 bg-danger")
+            i(class="fa-solid fa-angle-up text-white fw-bold fs-4")
+        //- end scroll to top
+        //- end landing
+        //- start services
+        div(class="services pt-5 pb-5" id="services")
+            div(class="container")
+                +head(" We are Good at", "Some of these stuff under")
+                div(class="row")
+                    div(class="col-md-6 col-lg-4 p-4 text-center")
+                        div(class="feat")
+                            div(class="icon position-relative mb-3")
+                                i(class="fa-solid fa-1")
+                                i(class="fa-solid fa-pen position-absolute")
+                            h4(class="text-warning text-uppercase") Graphic Design
+                            p(class="text-black-50 ps-1 pe-1") Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.
+                    div(class="col-md-6 col-lg-4 p-4 text-center")
+                        div(class="feat")
+                            div(class="icon position-relative mb-3")
+                                i(class="fa-solid fa-2")
+                                i(class="fa-solid fa-tv position-absolute")
+                            h4(class="text-warning text-uppercase") Graphic Design
+                            p(class="text-black-50 ps-1 pe-1") Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.
+                    div(class="col-md-6 col-lg-4 p-4 text-center")
+                        div(class="feat")
+                            div(class="icon position-relative mb-3")
+                                i(class="fa-solid fa-3")
+                                i(class="fa-solid fa-plug position-absolute")
+                            h4(class="text-warning text-uppercase") Graphic Design
+                            p(class="text-black-50 ps-1 pe-1") Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.
+        //- End services
+        //- start portfolio
+        div(class="portfolio pt-5 pb-5" id="portfolio")
+            div(class="container")
+                +head("We Make This", "Prepare To Be Amazed")
+                ul(class="liport list-unstyled d-flex justify-content-center align-items-center")
+                    each val in ["All", "Design", "Code", "photo", "App"]
+                        li(class="ms-1 me-1 p-3")= val
+                div(class="row justify-content-center")
+                    -for (var i = 0; i < 8; i++)
+                        div(class="image imageJs overflow-hidden position-relative col-md-4 col-lg-3 mb-3 mt-3" data-work="Application")
+                            img(class="img-fluid img-thumbnail w-100" src="images/portfolio/portfolio-" + countP++ + ".webp" alt="portfolio")
+                div(class="mt-5 d-flex justify-content-center ")
+                    +button("I Want More")
+        //- end portfolio
+        //- start about
+        div(class="about pt-5" id="about")
+            div(class="container")
+                +head("Some Stuff About Us", "The Great Team")
+                p(class="lh-base mb-5 txt text-black-50 m-auto ps-4 pe-4 text-center") Donec rutrum congue leo eget malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Donec sollicitudin molestie malesuada.
+                div(class="row align-items-center")
+                    div(class="col-lg-5 mt-3 mb-5 mb-lg-0 pb-2")
+                        h4 Retina Design
+                        p(class="text-black-50") Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
+                        p(class="text-black-50") Donec rutrum congue leo eget malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Donec sollicitudin molestie malesuada.
+                        +button("Order Me One")
+                    div(class="col-lg-7")
+                        div(class="image")
+                            img(class="img-fluid" src="images/about/laptop.png" alt="laptop")
+        //- end about
+        //- start contact
+        div(class="contact pt-5 pb-5" id="contact")
+            div(class="container pt-5 pb-5")
+                h2(class="text-warning text-center") Meet The Team
+                p(class="text-black-50 text-center mb-5") Donec rutrum congue leo eget malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Donec sollicitudin molestie malesuada.
+                div(class="row")
+                    -for (var c = 0; c < 4; c++)
+                        div(class="col-md-6 col-lg-3 mb-3 mt-3")
+                            div(class="box bg-white text-center border")
+                                div(class="image position-relative overflow-hidden")
+                                    img(class="img-fluid w-100" src="images/contact/contact-" + countC++ + ".webp" alt="Our Team")
+                                h5(class="text-white p-3 fw-bold") Luke Skywalker
+                                p(class="text-black-50 p-2") "I don't understand how we got by those troops. I thought we were dead." 
+        //- end contact 
+        //- start tech
+        div(class="tech pt-4 pb-4")
+            div(class="container")
+                div(class="row align-items-center")
+                    -for (var t = 0; t < 6; t++)
+                        div(class="col-6 col-md-4 col-lg-2")
+                            div(class="image mb-3 mt-3 d-flex justify-content-center")
+                                img(class="img-fluid" src="images/tech/tech-" + countT++ + ".png" alt="tech")                                
+        //- end tech
+        //- start project
+        div(class="project text-center pt-5 pb-5")
+            div(class="container")
+                div(class="text mb-5")
+                    h2(class="text-white") Start Your Project Now
+                    p(class="text-white-50") Leave your description and we start the engine.Don't worry,you can cancel anytime.
+                +button("Start Project")
+        //- end project
+        //- start blog
+        div(class="blog pt-5 pb-5" id="blog")
+            div(class="container")
+                +head("Read Our Blog", "New Stories")
+                div(class="row")
+                    -for (let b = 0; b < 3; b++)
+                        div(class="col-md-6 col-lg-4")
+                            div(class="box border mb-3 mt-3")
+                                div(class="image position-relative overflow-hidden")
+                                    img(class="w-100 img-fluid" src="images/blog/blog-" + countB++ + ".webp" alt="Blog")
+                                div(class="txt text-center p-3")
+                                    p(class="mb-1"): span Jan 17, 2022
+                                    p(class="mb-1 fw-bold fs-6") Some Awesome Blog Title Here
+                div(class="d-flex justify-content-center mt-5")
+                    +button("More Stories")
+        //- end blog
+        //- start subscribe
+        div(class="subscribe pt-5 pb-5 bg-warning")
+            div(class="container")
+                div(class="row justify-content-between align-items-center")
+                    p(class="col-md-6 col-lg-4 text-center fw-bold fs-5") Subscribe to our Newsletter:
+                    form(class="col-md-6" action="")
+                        input(class="w-100 p-2 bg-transparent border-0 border-bottom border-white border-2 text-white mb-3" type="text" placeholder="Enter Email Adress")
+                    div(class="col-lg-2 mt-3 mt-lg-0 d-flex justify-content-center")
+                        +button("Subscribe")
+        //- end subscribe
+        include pugjs/layout/_footer.pug
+        include pugjs/helpers/_scripts.pug
